@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
 import { Lexend_Deca } from "next/font/google";
+import TopBanner from "./components/TopBanner";
 
 const lexendDeca = Lexend_Deca({
   subsets: ["latin"],
@@ -22,7 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexendDeca.variable} antialiased`}>{children}</body>
+      <body className={`${lexendDeca.variable} antialiased`}>
+        <div>
+          <TopBanner />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
